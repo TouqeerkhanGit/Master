@@ -60,7 +60,7 @@ public class PicklistFieldController{
         objEntries = null;
         objJsonEntries = null;
         system.debug('objResults--->' + objResults);
-        //Test class
+        //Test class working in devorg
         return objResults;
     }
  
