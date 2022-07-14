@@ -1,0 +1,6 @@
+<aura:component access="GLOBAL" >
+	<li><a>Bug Spray</a></li>
+    <li><a>Bear Repellant</a></li>
+    <li><a>Goat Food</a></li>
+
+</aura:component>

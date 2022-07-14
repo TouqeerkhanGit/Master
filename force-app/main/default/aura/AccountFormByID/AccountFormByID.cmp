@@ -1,0 +1,9 @@
+<aura:component controller="AccountFormByIDController" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+
+   <aura:attribute name="accGetID" type="String"/> 
+    <aura:attribute name="ac" type="Account"/>   
+<aura:handler name="init" value="{!this}" action="{!c.doInitAction}" /> 
+  <ui:inputText label="Account Name" value="{!v.ac.Name}"/>            
+<ui:inputText label="Type" value="{!v.ac.Type}"/> 
+<ui:inputText label="Industry" value="{!v.ac.Industry}"/>  
+</aura:component>

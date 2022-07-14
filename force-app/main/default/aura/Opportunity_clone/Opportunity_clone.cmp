@@ -1,0 +1,42 @@
+<aura:component controller="OpportunityById" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+   <aura:attribute name="accGetID" type="String"/> 
+     <aura:attribute name="recordId" type="String" />
+       <aura:handler name="init" value="{!this}" action="{!c.OpportList}"/>
+    <aura:attribute access="PUBLIC" name="Opp" type="Opportunity" default="
+                     { 'sobjectType': 'Opportunity',
+                     'Name': '',
+                     'StageName':''
+                     ,'Type':'',
+                       'CloseDate':'',
+                        'AccountId':''
+                   }"/>  
+  <!-- <aura:attribute name="selectedLookUpRecord" type="sObject" default="{}"/> -->
+    <aura:attribute name="objInfoapp" type="Opportunity" default="{sobjectType : 'Opportunity'}" />
+    <aura:attribute name="select" type="string"/>
+    <!--<aura:handler event="force:refreshView" action="{!c.OpportList}" /> -->
+     <!--<aura:handler name="change" value="{!v.Opp.StageName}" action="{!c.doAction}"/> -->
+
+    
+     <ui:inputText label="OpporName" value="{!v.Opp.Name}"/>            
+    
+    <ui:inputText label="Lead Source" value="{!v.Opp.LeadSource}"/> 
+       <ui:inputText label="Type" value="{!v.Opp.Type}"/> 
+     <ui:inputText label="Close date" value="{!v.Opp.CloseDate}"/>
+    <ui:inputText label="AccountId" value="{!v.Opp.AccountId}"/>
+     <c:Lookup objectType="Account" label="" selectedRecordId="{!v.Opp.AccountId}" readOnly="false" showFiveRecent="true" ></c:Lookup> 
+   <!--  <c:customLookup objectAPIName="Account" IconName="standard:Account" selectedRecord="{!v.selectedLookUpRecord}" />-->
+    LeadSource
+    <c:CustomPicklist objInfo="{!v.objInfoapp}"  fieldname="StageName" selected="{!v.Opp.StageName}"></c:CustomPicklist>
+  <c:CustomPicklist objInfo="{!v.objInfoapp}"  fieldname="LeadSource" selected="{!v.Opp.LeadSource}"></c:CustomPicklist>
+    
+        <ui:button label="Submit" 
+                   class="slds-button slds-button--neutral"
+                   labelClass="label"
+                   press="{!c.createOppor}"/>
+          <ui:button label="Cancel" 
+                   class="slds-button slds-button--neutral"
+                   labelClass="label" press="{!c.Close}"/>
+    
+    
+    
+</aura:component>

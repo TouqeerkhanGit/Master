@@ -1,0 +1,16 @@
+<apex:page showHeader="false" >
+    
+<apex:image id="test" url="https://developer.salesforce.com/files/salesforce-developer-network-logo.png"/>
+    
+
+    
+    <apex:pageBlock title="User Status">
+        <apex:pageBlockSection columns="1">
+           {!$user.FirstName} {! $user.LastName}
+            ({! $user.UserName})
+            
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+
+</apex:page>

@@ -1,0 +1,4 @@
+<aura:component access="GLOBAL">
+    <c:campingHeader />
+    <c:campingList />
+</aura:component>
